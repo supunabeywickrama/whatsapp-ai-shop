@@ -1,0 +1,41 @@
+{
+  "name": "WF-1 WhatsApp Inbound",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whatsapp",
+        "options": {}
+      },
+      "id": "webhook-1",
+      "name": "WhatsApp Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "whatsapp-inbound"
+    },
+    {
+      "parameters": {
+        "url": "=http://backend:4000/webhook/whatsapp",
+        "method": "POST",
+        "sendHeaders": true,
+        "sendBody": true,
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {}
+      },
+      "id": "http-1",
+      "name": "Forward to Backend",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [560, 300]
+    }
+  ],
+  "connections": {
+    "WhatsApp Webhook": {
+      "main": [[{ "node": "Forward to Backend", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

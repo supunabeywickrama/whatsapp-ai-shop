@@ -1,0 +1,23 @@
+{
+  "name": "WF-2 AI Reply",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "=http://backend:4000/api/ai/turn",
+        "method": "POST",
+        "sendBody": true,
+        "jsonBody": "={{ JSON.stringify({ conversation_id: $json.conversation_id, text: $json.text, chat_token: $json.chat_token }) }}",
+        "options": {}
+      },
+      "id": "ai-turn",
+      "name": "Run AI Turn",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [400, 300]
+    }
+  ],
+  "connections": {},
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

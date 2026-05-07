@@ -1,0 +1,35 @@
+{
+  "name": "WF-6 Daily Summary",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "cronExpression", "value": "30 0 * * *" }] }
+      },
+      "id": "cron",
+      "name": "Daily 00:30",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "=http://backend:4000/api/ai/daily-summary",
+        "method": "POST",
+        "options": {}
+      },
+      "id": "summarize",
+      "name": "Generate Summaries",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [560, 300]
+    }
+  ],
+  "connections": {
+    "Daily 00:30": {
+      "main": [[{ "node": "Generate Summaries", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

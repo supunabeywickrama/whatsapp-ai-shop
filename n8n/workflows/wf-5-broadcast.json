@@ -1,0 +1,35 @@
+{
+  "name": "WF-5 Broadcast",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "cronExpression", "value": "*/1 * * * *" }] }
+      },
+      "id": "cron",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "=http://backend:4000/api/broadcasts?status=scheduled",
+        "method": "GET",
+        "options": {}
+      },
+      "id": "fetch",
+      "name": "Fetch Due Broadcasts",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [560, 300]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [[{ "node": "Fetch Due Broadcasts", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

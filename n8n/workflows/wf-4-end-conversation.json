@@ -1,0 +1,23 @@
+{
+  "name": "WF-4 End Conversation",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "=http://backend:4000/api/conversations/{{$json.conversation_id}}/close",
+        "method": "POST",
+        "sendBody": true,
+        "jsonBody": "={{ JSON.stringify({ reason: $json.reason || 'goodbye' }) }}",
+        "options": {}
+      },
+      "id": "close",
+      "name": "Close Conversation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [400, 300]
+    }
+  ],
+  "connections": {},
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

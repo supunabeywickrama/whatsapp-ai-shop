@@ -1,0 +1,24 @@
+{
+  "name": "WF-3 Human Handoff",
+  "nodes": [
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            { "name": "message", "value": "Customer escalated — please respond in the admin inbox." }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-1",
+      "name": "Build Notification",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [400, 300]
+    }
+  ],
+  "connections": {},
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

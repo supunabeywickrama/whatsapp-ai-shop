@@ -1,0 +1,70 @@
+# Environment
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+.envrc
+*.pem
+*.key
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.turbo/
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Prisma
+backend/src/prisma/migrations/dev/
+
+# Logs
+logs/
+*.log
+
+# Docker volumes (when bound locally)
+docker/volumes/
+data/
+
+# n8n local data
+n8n/data/
+n8n/.n8n/
+
+# Editor
+.vscode/
+.idea/
+.claude/settings.local.json
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# Build artifacts
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
+tmp/
+temp/
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
