@@ -7,7 +7,7 @@ past conversations, hands off to humans when needed, and ends chats cleanly.
 Shop staff manage everything through a polished Next.js admin dashboard.
 n8n orchestrates the message flow.
 
-> **Status:** Portfolio / CV project — full-stack architecture demonstrating
+> **Status:**  full-stack architecture demonstrating
 > WhatsApp Cloud API + n8n + RAG + tool-using LLM agents + Next.js admin UI.
 
 ---
